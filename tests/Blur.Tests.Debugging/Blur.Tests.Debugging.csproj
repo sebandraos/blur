@@ -13,8 +13,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Blur.CommonAttributes\Blur.CommonAttributes.csproj" />
-    <ProjectReference Include="..\..\src\Blur.Library\Blur.Library.csproj" />
+    <PackageReference Include="Mono.Cecil" Version="0.10.0-beta5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\Blur\Blur.csproj" />
   </ItemGroup>
 
