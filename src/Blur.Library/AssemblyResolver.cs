@@ -43,7 +43,8 @@ namespace Blur
                 {
                     InMemory = true,
                     ReadWrite = false,
-                    ReadingMode = ReadingMode.Immediate
+                    ReadingMode = ReadingMode.Immediate,
+                    AssemblyResolver = new AssemblyResolver()
                 });
 
                 this.assembliesResolved.Add(fullName, assembly);
