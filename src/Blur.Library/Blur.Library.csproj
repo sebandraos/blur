@@ -2,14 +2,51 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
+    <PackageId>Blur</PackageId>
+    <Title>Blur</Title>
+    <PackageVersion>0.2.9-beta02</PackageVersion>
+    <Authors>Jee</Authors>
+    <Owners>Jee</Owners>
+    <PackageLicenseUrl>http://opensource.org/licenses/mit-license.php</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/6A/blur</PackageProjectUrl>
+    <Description>
+      Blur provides a fluent and minimalistic way to edit assemblies from the inside, using Mono.Cecil:
+      - Expression / Method printing to MethodBody.
+      - Compile-time mixins.
+      - Custom attributes.
+    </Description>
+    <Language>en-US</Language>
+    <Copyright>Copyright (C) Grégoire GEIS 2016-2017</Copyright>
+    <PackageTags>mono cecil il weaving weave assembly reflection injection blur</PackageTags>
+    <PackageReleaseNotes>
+      - Generated files and their PPDB data will match, making debugging extremely easy.
+    </PackageReleaseNotes>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>bin\Release</OutputPath>
+    <OutputPath>..\..\build\</OutputPath>
+    <DocumentationFile>..\..\build\netstandard1.3\Blur.Library.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\build\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Mono.Cecil" Version="0.10.0-beta4" />
+    <Content Include="..\..\build\*.exe">
+      <Pack>true</Pack>
+      <PackagePath>tools\</PackagePath>
+    </Content>
+    <Content Include="..\..\items\Blur.targets">
+      <Pack>true</Pack>
+      <PackagePath>build\netstandard1.3\</PackagePath>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mono.Cecil" Version="0.10.0-beta5" />
     <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.3.0" />
     <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />

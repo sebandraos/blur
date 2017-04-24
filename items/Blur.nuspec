@@ -43,13 +43,13 @@
     
     <files>
         <!-- Tools -->
-        <file src="..\build\Release\*.exe" target="tools" />
+        <file src="..\build\*.exe" target="tools" />
 
         <!-- Targets -->
         <file src="Blur.targets" target="build\netstandard1.3" />
         
         <!-- .NET Standard 1.3 -->
-        <file src="..\src\Blur.Library\bin\Release\netstandard1.3\*.dll" target="lib\netstandard1.3" />
-        <file src="..\src\Blur.Library\bin\Release\netstandard1.3\*.xml" target="lib\netstandard1.3" />
+        <file src="..\build\Release\netstandard1.3\*.dll" target="lib\netstandard1.3" />
+        <file src="..\build\netstandard1.3\*.xml" target="lib\netstandard1.3" />
     </files>
 </package>

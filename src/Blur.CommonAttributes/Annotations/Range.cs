@@ -44,7 +44,7 @@ namespace Blur.Annotations
             if (def.Implements<ICollection>())
             {
                 method.Write().ToStart()
-                      .Delegate(Context.Argument<ICollection>(paramIndex), Min, Max, parameter.Name, (coll, min, max, name) =>
+                      .Delegate(Context.Argument<ICollection>(paramIndex), Min, Max, parameter.Name,  (coll, min, max, name) =>
                       {
                           if (coll.Value.Count < min || coll.Value.Count > max)
                               throw new ArgumentOutOfRangeException(name);
